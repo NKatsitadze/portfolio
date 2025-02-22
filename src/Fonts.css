@@ -1,0 +1,24 @@
+h1 {
+    margin: 0;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+}
+
+.text-xl {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+.text-l {
+    font-size: 28px;
+    line-height: 38px;
+}
+
+.text-m {
+    font-size: 20px;
+    line-height: 26px;
+}
+

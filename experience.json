@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "company_name": "Identomat",
+        "position": "Frontend Developer",
+        "start": "2023-03-01T00:00:00Z"
+    },
+
+
+    {
+        "id": 1,
+        "company_name": "Freelance",
+        "position": "Frontend Developer",
+        "start": "2022-09-01T00:00:00Z"
+    },
+
+    {
+        "id": 2,
+        "company_name": "Bitoid",
+        "position": "Frontend Developer",
+        "start": "2022-10-01T00:00:00Z",
+        "end": "2023-03-01T00:00:00Z"
+    }
+
+]
+  
