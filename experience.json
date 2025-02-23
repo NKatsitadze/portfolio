@@ -3,7 +3,17 @@
         "id": 0,
         "company_name": "Identomat",
         "position": "Frontend Developer",
-        "start": "2023-03-01T00:00:00Z"
+        "start": "2023-03-01T00:00:00Z",
+        "responsibilities": [
+            "Building and optimizing dynamic, responsive UIs for client-side applications.",
+            "Reducing the loading time of our existing web and server side applications and reducing the DOM hier-archy.",
+            "Collaborating with Product Managers, UI/UX Designers, Product Owner on a daily basis.",
+            "Cleaning and Refactoring legacy code, turning JS modules into svelte components and PHP parts into Node.js modules.",
+            "Developing and implementing features on server side.",
+            "Creating company custom UI library and writing documentation.",
+            "Technologies: JavaScript, Svelte, Node, Express, PHP, MongoDB, Cypress, Tailwind."
+        ],
+        "logo": ".././public/identomat.jpeg"
     },
 
 
@@ -11,7 +21,13 @@
         "id": 1,
         "company_name": "Freelance",
         "position": "Frontend Developer",
-        "start": "2022-09-01T00:00:00Z"
+        "start": "2022-09-01T00:00:00Z",
+        "responsibilities": [
+            "Building websites, web apps, implementing features, making existing projects more user friendly, beautiful, dynamic and responsive with cross-browser compability.",
+            "Developing projects with clean and reusable components with docs.",
+            "Also working on server side with backend apps and databases, but still more frontend heavy."
+        ],
+        "logo": ".././public/identomat.jpeg"
     },
 
     {
@@ -19,8 +35,13 @@
         "company_name": "Bitoid",
         "position": "Frontend Developer",
         "start": "2022-10-01T00:00:00Z",
-        "end": "2023-03-01T00:00:00Z"
+        "end": "2023-03-01T00:00:00Z",
+        "responsibilities": [
+            "Working with a team, led by senior software engineers.",
+            "Creating UIs according to designs and instructions.",
+            "Making client side projects responsive, cross-browser compatible and user friendly."
+        ],
+        "logo": ".././public/identomat.jpeg"
     }
-
 ]
   

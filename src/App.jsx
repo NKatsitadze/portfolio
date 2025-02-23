@@ -55,7 +55,7 @@ function App() {
       {showModal && <Modal closeProjectModal={closeProjectModal} repo={targetedRepo}/>}
 
       <section className='section-owner'>
-        <img className='owner-image' src={repositories[0]?.owner.avatar_url || '/'} alt="image" />
+        <img className='section-owner__image' src={repositories[0]?.owner.avatar_url || '/'} alt="image" />
         <div>
           <h1 className='text-xl'>{About.name}</h1>
           <div className='text-l'>{About.role}</div>
@@ -65,19 +65,18 @@ function App() {
 
       <section className='section-adjust'>
           <div className='text-l'>Experience</div>
-          <div className='experiences'>
+          <div className='experiences details-box'>
             {Object.values(Experience).map((exp) => (
-              // <ProjectDetailsBox key={exp.id} {...exp} openProjectModal={openProjectModal}/>
-              <div className='' key={exp.id}>{exp.company_name}</div>
+              <ProjectDetailsBox key={exp.id} type="experiences" {...exp}/>
             ))}
           </div>
         </section>
 
       <section className='section-adjust'>
           <div className='text-l'>Projects</div>
-          <div className='projects'>
+          <div className='projects details-box'>
             {repositories.map((repo) => (
-              <ProjectDetailsBox key={repo.id} {...repo} openProjectModal={openProjectModal}/>
+              <ProjectDetailsBox key={repo.id} type="projects" {...repo} openProjectModal={openProjectModal}/>
             ))}
           </div>
         </section>

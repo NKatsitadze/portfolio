@@ -7,7 +7,7 @@
   gap: 24px;
 }
 
-.owner-image {
+.section-owner__image {
   height: 120px;
   width: 120px;
   object-fit: contain;

@@ -7,15 +7,19 @@
     border-radius: 6px;
     transition: all 0.15s;
 }
-.projects:hover .project-card {
+.details-box:hover .project-card {
     opacity: 0.5;
 }
-.projects .project-card:hover {
+.details-box .project-card:hover {
     opacity: 1;
 }
 
 .project-card__image {
     width: 40%;
+    max-width: 350px;
+    max-height: 200px;
+    object-fit: contain;
+    background-color: #FFFFFF;
     border-radius: 6px;
     cursor: pointer;
 }
