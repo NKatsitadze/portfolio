@@ -6,7 +6,6 @@ function ProjectDetailsBox (details) {
     let datesString = ''
     
     if(details.type === "experience") {
-        imageUrl = details.logo
         startDate = new Date(details.start)
         const endDate = details.end ? new Date(details.end) : undefined
         const endDateString = endDate ? `${String(endDate.getDate()).padStart(2, '0')}/${String(endDate.getMonth()).padStart(2, '0')}/${String(endDate.getFullYear()).padStart(2, '0')}` : 'Present'
@@ -18,11 +17,15 @@ function ProjectDetailsBox (details) {
         datesString = startDate.getFullYear()
     }
 
-    if(details.type === 'experience') console.log(details)
+    if(details.type !== "projects") imageUrl = details.logo
+
+    
+    if(details.type === 'tech-stack') console.log(details.stack)
+
     return (
         <>
-            <div className='project-card'>
-                <img src={imageUrl} className={`project-card__image ${details.type === 'experience' ? 'sticky decreased-width' : ''}`} onClick={() => details.openProjectModal(details.name)} alt={`${details.company_name || 'project'} img`} />
+            <div className={`project-card ${details.flexColumn ? 'flex-column unset-max-height' : ''}`}>
+                <img src={imageUrl} className={`project-card__image ${details.type === 'tech-stack' ? 'adjust-image' : ''} ${details.type === 'experience' ? 'sticky decreased-width' : ''}`} onClick={() => details.openProjectModal(details.name)} alt={`${details.company_name || 'project'} img`} />
                 <div className='project-card__details'>
                         <div>
                             <div className="project-card__header">
@@ -41,6 +44,7 @@ function ProjectDetailsBox (details) {
                             </div>
                             {details.type === 'projects' && <div className='project-card__description'>{details.description}</div>}
                             {details.type === 'experience' && (details.responsibilities.map((each, i) => { return <div key={i}>{String.fromCharCode(8226)} {each}</div> }))}
+                            {details.type === 'tech-stack' && (details.stack.map((each, i) => { return <div key={i}>{each}</div> }))}
                         </div>
 
                     {details.type === 'projects' &&

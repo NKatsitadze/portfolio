@@ -3,6 +3,7 @@ import ProjectDetailsBox from './components/ProjectDetailsBox'
 import Modal from './components/Modal'
 import { handleScroll } from '../helpers'
 import Experience from '../experience.json'
+import TechStack from '../tech-stack.json'
 import About from '../about.json'
 
 import './App.css'
@@ -52,7 +53,6 @@ function App() {
   return (
 
     <>
-
       {showModal && <Modal closeProjectModal={closeProjectModal} repo={targetedRepo}/>}
 
       <section className='section-owner'>
@@ -65,8 +65,8 @@ function App() {
       </section>
 
       <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>
-      <Section section={"Projects"} type="projects" renderData={repositories} openProjectModal={openProjectModal} containsGrid/>
-
+      <Section section={"Projects"} type="projects" renderData={repositories} openProjectModal={openProjectModal} doubleGrid/>
+      <Section section={"Tech-stack"} type="tech-stack" renderData={Object.values(TechStack)} tripleGrid flexColumn/>
     </>
   )
 }

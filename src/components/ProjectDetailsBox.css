@@ -35,6 +35,11 @@
     width: 25%;
 }
 
+.adjust-image {
+    width: 50%;
+    padding: 12px;
+}
+
 .project-card__details {
     display: flex;
     flex-direction: column;
@@ -79,4 +84,12 @@
 
 .justify-center {
     justify-content: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.unset-max-height {
+    max-height: unset;
 }

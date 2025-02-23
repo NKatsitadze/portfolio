@@ -45,6 +45,12 @@
   gap: 12px;
 }
 
+.triple-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
 .single-column-grid {
   display: grid;
   grid-template-columns: 1fr;
