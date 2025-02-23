@@ -20,9 +20,34 @@
   gap: 12px;
 }
 
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.grid-actions {
+  display: flex;
+  gap: 4px;
+  border: 1px solid red;
+}
+
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.double-column-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.single-column-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 
@@ -30,4 +55,10 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
+}
+
+
+
+button {
+  cursor: pointer;
 }

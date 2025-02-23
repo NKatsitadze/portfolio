@@ -8,6 +8,7 @@ import About from '../about.json'
 import './App.css'
 import './index.css'
 import './Fonts.css'
+import Section from './components/Section'
 
 function App() {
 
@@ -63,23 +64,8 @@ function App() {
         <div>{About.story}</div>
       </section>
 
-      <section className='section-adjust'>
-          <div className='text-l'>Experience</div>
-          <div className='experiences details-box'>
-            {Object.values(Experience).map((exp) => (
-              <ProjectDetailsBox key={exp.id} type="experiences" {...exp}/>
-            ))}
-          </div>
-        </section>
-
-      <section className='section-adjust'>
-          <div className='text-l'>Projects</div>
-          <div className='projects details-box'>
-            {repositories.map((repo) => (
-              <ProjectDetailsBox key={repo.id} type="projects" {...repo} openProjectModal={openProjectModal}/>
-            ))}
-          </div>
-        </section>
+      <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>
+      <Section section={"Projects"} type="projects" renderData={repositories} openProjectModal={openProjectModal} containsGrid/>
 
     </>
   )

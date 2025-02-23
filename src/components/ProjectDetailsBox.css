@@ -3,6 +3,8 @@
     display: flex;
     gap: 12px;
     align-items: center;
+    max-height: 216px;
+    overflow: auto;
     padding: 8px 12px;
     border-radius: 6px;
     transition: all 0.15s;
@@ -22,6 +24,15 @@
     background-color: #FFFFFF;
     border-radius: 6px;
     cursor: pointer;
+}
+
+.sticky {
+    position: sticky;
+    top: 0px;
+}
+
+.decreased-width {
+    width: 25%;
 }
 
 .project-card__details {
@@ -64,4 +75,8 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
 }
