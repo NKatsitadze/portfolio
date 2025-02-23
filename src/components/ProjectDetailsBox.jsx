@@ -16,11 +16,7 @@ function ProjectDetailsBox (details) {
         startDate = new Date(details.created_at)
         datesString = startDate.getFullYear()
     }
-
     if(details.type !== "projects") imageUrl = details.logo
-
-    
-    if(details.type === 'tech-stack') console.log(details.stack)
 
     return (
         <>

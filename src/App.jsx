@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, Fragment } from 'react'
-import ProjectDetailsBox from './components/ProjectDetailsBox'
 import Modal from './components/Modal'
 import { handleScroll } from '../helpers'
 import Experience from '../experience.json'
@@ -12,11 +11,9 @@ import './Fonts.css'
 import Section from './components/Section'
 
 function App() {
-
   const [repositories, setRepositories] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [targetedRepo, setTargetedRepo] = useState({})
-  const [experience, setExperience] = useState()
 
   const openProjectModal = (name) => {
     setTargetedRepo(repositories.find(e => e.name === name))
@@ -38,7 +35,7 @@ function App() {
           throw new Error("Network response was not ok")
         }
         let repos = await response.json()
-        repos = repos.filter(e => e.stargazers_count > 0) // filters by stared repositories
+        // repos = repos.filter(e => e.stargazers_count > 0) // filters by stared repositories
         setRepositories(repos)
       } catch (err) {
         // setError(err)
@@ -51,10 +48,8 @@ function App() {
   }, [])
 
   return (
-
     <>
       {showModal && <Modal closeProjectModal={closeProjectModal} repo={targetedRepo}/>}
-
       <section className='section-owner'>
         <img className='section-owner__image' src={repositories[0]?.owner.avatar_url || '/'} alt="image" />
         <div>
@@ -65,8 +60,10 @@ function App() {
       </section>
 
       <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>
-      <Section section={"Projects"} type="projects" renderData={repositories} openProjectModal={openProjectModal} doubleGrid/>
+      <Section section={"Projects"} type="projects" renderData={repositories.filter(e => e.stargazers_count > 0)} openProjectModal={openProjectModal} doubleGrid/>
       <Section section={"Tech-stack"} type="tech-stack" renderData={Object.values(TechStack)} tripleGrid flexColumn/>
+
+      <Section section={"Education"} type="education" renderData={[]}/>
     </>
   )
 }

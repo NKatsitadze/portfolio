@@ -2,7 +2,7 @@
     {
         "id": 0,
         "name": "Frontend",
-        "stack": ["JavaScript", "TypeScript", "Next.js", "React.js", "Svelte.js", "CSS", "SASS/SCSS", "Tailwind", "MUI", "Bootstrap", "Styled-components"],
+        "stack": ["JavaScript", "TypeScript", "Next.js", "React.js", "Svelte.js", "CSS/SASS/SCSS", "Tailwind", "MUI", "Bootstrap", "Styled-components"],
         "logo": ".././public/front.png"
 
     },
