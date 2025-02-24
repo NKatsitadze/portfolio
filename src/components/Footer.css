@@ -1,0 +1,12 @@
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.footer__link {
+    text-align: center;
+}
+
+.footer__modal {
+    display: none;
+}

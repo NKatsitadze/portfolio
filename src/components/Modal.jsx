@@ -14,7 +14,7 @@ function Modal ({repo, closeProjectModal}) {
             <motion.div 
                 className={'modal'}
                 animate={{ opacity: visibility ? 1 : 0 }} 
-                transition={{ duration: 0.5 }} 
+                transition={{ duration: 0.15 }} 
                 onClick={() => closeModal()}>
                     {repo.name}
             </motion.div>

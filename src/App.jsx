@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Fragment } from 'react'
+import { useState, useEffect, useRef, Fragment, memo } from 'react'
 import Modal from './components/Modal'
 import { handleScroll } from '../helpers'
 import Experience from '../experience.json'
@@ -9,8 +9,13 @@ import './App.css'
 import './index.css'
 import './Fonts.css'
 import Section from './components/Section'
+import Footer from './components/Footer'
+
+let renderCount = 0
 
 function App() {
+  renderCount = renderCount + 1
+  console.log(renderCount)
   const [repositories, setRepositories] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [targetedRepo, setTargetedRepo] = useState({})
@@ -24,6 +29,8 @@ function App() {
 
   useEffect(() => {
     handleScroll(showModal)
+
+    return () => handleScroll(false); // Ensure scrolling is restored when modal unmounts
   }, [showModal])
 
 
@@ -62,8 +69,7 @@ function App() {
       <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>
       <Section section={"Projects"} type="projects" renderData={repositories.filter(e => e.stargazers_count > 0)} openProjectModal={openProjectModal} doubleGrid/>
       <Section section={"Tech-stack"} type="tech-stack" renderData={Object.values(TechStack)} tripleGrid flexColumn/>
-
-      <Section section={"Education"} type="education" renderData={[]}/>
+      <Footer />
     </>
   )
 }
