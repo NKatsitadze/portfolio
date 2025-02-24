@@ -1,5 +1,7 @@
-import { useState, useEffect, useRef, Fragment, memo } from 'react'
+import { useState, useEffect } from 'react'
 import Modal from './components/Modal'
+import Footer from './components/Footer'
+import Section from './components/Section'
 import { handleScroll } from '../helpers'
 import Experience from '../experience.json'
 import TechStack from '../tech-stack.json'
@@ -8,20 +10,15 @@ import About from '../about.json'
 import './App.css'
 import './index.css'
 import './Fonts.css'
-import Section from './components/Section'
-import Footer from './components/Footer'
-
-let renderCount = 0
 
 function App() {
-  renderCount = renderCount + 1
-  console.log(renderCount)
   const [repositories, setRepositories] = useState([])
   const [showModal, setShowModal] = useState(false)
-  const [targetedRepo, setTargetedRepo] = useState({})
+  const [modalContent, setModalContent] = useState({})
 
-  const openProjectModal = (name) => {
-    setTargetedRepo(repositories.find(e => e.name === name))
+  const openProjectModal = (content) => {
+    if(typeof content === 'string') setModalContent(repositories.find(e => e.name === content))
+    if(typeof content === 'object') setModalContent(content)
     setShowModal(true)
   }
 
@@ -29,8 +26,7 @@ function App() {
 
   useEffect(() => {
     handleScroll(showModal)
-
-    return () => handleScroll(false); // Ensure scrolling is restored when modal unmounts
+    return () => handleScroll(false)
   }, [showModal])
 
 
@@ -41,8 +37,7 @@ function App() {
         if (!response.ok) {
           throw new Error("Network response was not ok")
         }
-        let repos = await response.json()
-        // repos = repos.filter(e => e.stargazers_count > 0) // filters by stared repositories
+        const repos = await response.json()
         setRepositories(repos)
       } catch (err) {
         // setError(err)
@@ -56,7 +51,7 @@ function App() {
 
   return (
     <>
-      {showModal && <Modal closeProjectModal={closeProjectModal} repo={targetedRepo}/>}
+      {showModal && <Modal closeProjectModal={closeProjectModal} content={modalContent}/>}
       <section className='section-owner'>
         <img className='section-owner__image' src={repositories[0]?.owner.avatar_url || '/'} alt="image" />
         <div>
@@ -69,7 +64,7 @@ function App() {
       <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>
       <Section section={"Projects"} type="projects" renderData={repositories.filter(e => e.stargazers_count > 0)} openProjectModal={openProjectModal} doubleGrid/>
       <Section section={"Tech-stack"} type="tech-stack" renderData={Object.values(TechStack)} tripleGrid flexColumn/>
-      <Footer />
+      <Footer openProjectModal={openProjectModal} closeProjectModal={closeProjectModal}/>
     </>
   )
 }

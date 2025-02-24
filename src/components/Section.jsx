@@ -8,12 +8,12 @@ function Section (children) {
     const setColumnsOne = () => {
         projectsRef.current.classList.remove('double-column-grid')
         projectsRef.current.classList.add('single-column-grid')
-      }
+    }
     
-      const setColumnsTwo = () => {
-        projectsRef.current.classList.add('double-column-grid')
-        projectsRef.current.classList.remove('single-column-grid')
-      }
+    const setColumnsTwo = () => {
+      projectsRef.current.classList.add('double-column-grid')
+      projectsRef.current.classList.remove('single-column-grid')
+    }
 
     return (
         <>

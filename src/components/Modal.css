@@ -4,7 +4,40 @@
     left: 0;
     height: 100svh;
     width: 100dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(10, 10, 26, 0.6); 
     opacity: 0.7;
     z-index: 20;
+}
+
+.modal__content {
+    height: 80%;
+    width: 80%;
+    background-color: #939dc0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.modal__image {
+    width: 30%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+.modal__image:hover {
+    transform: scale(1.05) translateY(-3px);
+}
+
+.modal__close-button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
