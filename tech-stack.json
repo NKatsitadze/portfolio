@@ -3,20 +3,20 @@
         "id": 0,
         "name": "Frontend",
         "stack": ["JavaScript", "TypeScript", "Next.js", "React.js", "Svelte.js", "CSS/SASS/SCSS", "Tailwind", "MUI", "Bootstrap", "Styled-components"],
-        "logo": ".././public/front.png"
+        "logo": "/front.png"
 
     },
     {
         "id": 1,
         "name": "Backend",
         "stack": ["Node.js", "Express", "PHP", "MongoDB", "Mongoose"],
-        "logo": ".././public/back.png"
+        "logo": "/back.png"
 
     },
     {
         "id": 2,
         "name": "Tools",
         "stack": ["Redux", "React Router", "Cypress", "Jest", "Git GitHub GitLab", "Webpack", "Vite"],
-        "logo": ".././public/tools.png"
+        "logo": "/tools.png"
     }
 ]
