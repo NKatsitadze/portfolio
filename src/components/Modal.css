@@ -13,27 +13,28 @@
 }
 
 .modal__content {
-    height: 80%;
-    width: 80%;
+    height: 75%;
+    width: 85%;
+    padding: 36px 24px;
     background-color: #939dc0;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 24px;
     position: relative;
 }
 
 .modal__image {
-    width: 30%;
-    max-height: 90%;
+    max-width: 30%;
+    max-height: 100%;
     object-fit: contain;
     transition: all 0.15s;
     cursor: pointer;
 }
 
 .modal__image:hover {
-    transform: scale(1.05) translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .modal__close-button {

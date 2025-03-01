@@ -1,0 +1,17 @@
+.img-magnifier-container {
+    position: relative;
+    width: 30%;
+    height: 90%;
+}
+
+.magnifier-img {
+    width: auto;
+    height: 70vh;
+}
+
+.magnifier-image {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #FFF;
+}
+

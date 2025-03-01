@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { motion } from "motion/react"
 import './Modal.css'
+import Magnifier from './Magnifier'
 
 function Modal ({content, closeProjectModal}) {
     
@@ -14,7 +15,9 @@ function Modal ({content, closeProjectModal}) {
     const projectImageTablet = content.html_url + `/blob/${content.default_branch}/public/tablet.webp?raw=true`
     const projectImagePhone = content.html_url + `/blob/${content.default_branch}/public/phone.webp?raw=true`
 
+    // const projectsContent = <>{[projectImageDesktop, projectImageTablet, projectImagePhone].map((each, i) => {return <img className='modal__image' key={i} src={each}/>})}</>
     const projectsContent = <>{[projectImageDesktop, projectImageTablet, projectImagePhone].map((each, i) => {return <img className='modal__image' key={i} src={each}/>})}</>
+
 
     return (
         <>
