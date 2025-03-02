@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postbuild": "cp google7f8811d336b000f8.html dist/"
+
   },
   "dependencies": {
     "motion": "^12.4.7",
