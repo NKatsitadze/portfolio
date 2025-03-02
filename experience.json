@@ -13,7 +13,7 @@
             "Creating company custom UI library and writing documentation.",
             "Technologies: JavaScript, Svelte, Node, Express, PHP, MongoDB, Cypress, Tailwind."
         ],
-        "logo": "src/assets/identomat.jpeg"
+        "logo": "identomat.jpeg"
     },
 
 
@@ -27,7 +27,7 @@
             "Developing projects with clean and reusable components with docs.",
             "Also working on server side with backend apps and databases, but still more frontend heavy."
         ],
-        "logo": "src/assets/freelance.png"
+        "logo": "freelance.png"
     },
 
     {
@@ -41,7 +41,7 @@
             "Creating UIs according to designs and instructions.",
             "Making client side projects responsive, cross-browser compatible and user friendly."
         ],
-        "logo": "src/assets/bitoid.jpeg"
+        "logo": "bitoid.jpeg"
     }
 ]
   

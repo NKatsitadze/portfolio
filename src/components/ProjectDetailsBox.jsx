@@ -17,7 +17,10 @@ function ProjectDetailsBox (details) {
         startDate = new Date(details.created_at)
         datesString = startDate.getFullYear()
     }
-    if(details.type !== "projects") imageUrl = details.logo
+    if(details.type !== "projects") {
+        const basePath = import.meta.env.BASE_URL
+        imageUrl = `${basePath}${details.logo}`
+    } 
 
     return (
         <>
