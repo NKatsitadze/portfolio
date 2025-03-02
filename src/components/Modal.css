@@ -13,7 +13,7 @@
 }
 
 .modal__content {
-    height: 75%;
+    height: 80%;
     width: 85%;
     padding: 36px 24px;
     background-color: #939dc0;
@@ -37,8 +37,3 @@
     transform: translateY(-3px);
 }
 
-.modal__close-button {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-}

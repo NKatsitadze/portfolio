@@ -27,12 +27,6 @@
 
 }
 
-.grid-actions {
-  display: flex;
-  gap: 4px;
-  border: 1px solid red;
-}
-
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

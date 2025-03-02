@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { motion } from "motion/react"
 import './Modal.css'
-import Magnifier from './Magnifier'
+import CloseModalButton from './CloseModalButton'
 
 function Modal ({content, closeProjectModal}) {
     
@@ -15,7 +15,6 @@ function Modal ({content, closeProjectModal}) {
     const projectImageTablet = content.html_url + `/blob/${content.default_branch}/public/tablet.webp?raw=true`
     const projectImagePhone = content.html_url + `/blob/${content.default_branch}/public/phone.webp?raw=true`
 
-    // const projectsContent = <>{[projectImageDesktop, projectImageTablet, projectImagePhone].map((each, i) => {return <img className='modal__image' key={i} src={each}/>})}</>
     const projectsContent = <>{[projectImageDesktop, projectImageTablet, projectImagePhone].map((each, i) => {return <img className='modal__image' key={i} src={each}/>})}</>
 
 
@@ -35,7 +34,7 @@ function Modal ({content, closeProjectModal}) {
                                 allowFullScreen
                             ></iframe> 
                             : projectsContent}
-                    <button onClick={closeModal} className='modal__close-button'>x</button>
+                    <CloseModalButton closeModal={closeModal}/>
                     </div>
             </motion.div>
         </>

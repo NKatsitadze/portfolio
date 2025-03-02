@@ -1,0 +1,10 @@
+.modal__close-button {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    height: 20px;
+    width: 30px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid #0a192f;
+}

@@ -48,10 +48,6 @@
     flex: 1;
 }
 
-.project-card__title {
-    margin-bottom: 12px;
-}
-
 .project-card__actions {
     display: flex;
     gap: 12px;
@@ -70,15 +66,9 @@
     transform: translateY(-2px);
 }
 
-.project-card__modal-button {
-    height: 20px;
-    width: 20px;
-    cursor: pointer;
-}
-
 .project-card__header {
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
 }
 

@@ -5,6 +5,13 @@
 
 .footer__link {
     text-align: center;
+    transition: all 0.15s;
+    background-color: transparent;
+    border: none;
+}
+
+.footer__link:hover {
+    color: white;
 }
 
 .footer__modal {

@@ -1,18 +1,19 @@
 import { useRef } from "react";
 import ProjectDetailsBox from "./ProjectDetailsBox";
+import ToggleDisplayMode from "./ToggleDisplayMode";
 
 function Section (children) {
 
     const projectsRef = useRef()
 
-    const setColumnsOne = () => {
+    const setGridDisplay = (gridDisplay) => {
+      if(gridDisplay) {
+        projectsRef.current.classList.add('double-column-grid')
+        projectsRef.current.classList.remove('single-column-grid')
+      } else {
         projectsRef.current.classList.remove('double-column-grid')
         projectsRef.current.classList.add('single-column-grid')
-    }
-    
-    const setColumnsTwo = () => {
-      projectsRef.current.classList.add('double-column-grid')
-      projectsRef.current.classList.remove('single-column-grid')
+      }
     }
 
     return (
@@ -21,10 +22,7 @@ function Section (children) {
           <div className='section-header'>
             <div className='text-l'>{children.section}</div>
             {children.doubleGrid &&
-                <div className='grid-actions'>
-                <button onClick={setColumnsOne}>A</button>
-                <button onClick={setColumnsTwo}>B</button>
-                </div>
+                <ToggleDisplayMode setGridDisplay={setGridDisplay}/>
             }
           </div>
           <div ref={projectsRef} className={`details-box ${children.doubleGrid ? 'double' : children.tripleGrid  ? 'triple' : 'single'}-column-grid `}>

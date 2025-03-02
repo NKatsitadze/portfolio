@@ -1,3 +1,4 @@
+import OpenModalButton from './OpenModalButton'
 import './ProjectDetailsBox.css'
 
 function ProjectDetailsBox (details) {
@@ -35,12 +36,14 @@ function ProjectDetailsBox (details) {
                                 }
                                 
                                 {details.type === 'projects' &&
-                                    <button className='project-card__modal-button' onClick={() => details.openProjectModal(details.name)}>+</button>
+                                    <OpenModalButton openProjectModal={details.openProjectModal} detail={details.name}/>
                                 }
                             </div>
                             {details.type === 'projects' && <div className='project-card__description'>{details.description}</div>}
-                            {details.type === 'experience' && (details.responsibilities.map((each, i) => { return <div key={i}>{String.fromCharCode(8226)} {each}</div> }))}
-                            {details.type === 'tech-stack' && (details.stack.map((each, i) => { return <div key={i}>{each}</div> }))}
+                            <ul>
+                                {details.type === 'experience' && (details.responsibilities.map((each, i) => { return <li key={i}>{String.fromCharCode(8226)} {each}</li> }))}
+                                {details.type === 'tech-stack' && (details.stack.map((each, i) => { return <li key={i}>{String.fromCharCode(8226)} {each}</li> }))}
+                            </ul>
                         </div>
 
                     {details.type === 'projects' &&
