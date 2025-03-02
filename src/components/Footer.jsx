@@ -1,7 +1,8 @@
 import './Footer.css'
 
 const Footer = (children) => {
-    const iframeElement = <iframe src="../src/assets/resume-nika-katsitadze.pdf"></iframe>
+    const basePath = import.meta.env.BASE_URL
+    const iframeElement = <iframe src={`${basePath}resume-nika-katsitadze.pdf`}></iframe>
 
     return (
         <>
