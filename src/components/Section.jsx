@@ -20,7 +20,7 @@ function Section (children) {
         <>
         <section className='section-adjust'>
           <div className='section-header'>
-            <div className='text-l'>{children.section}</div>
+            <h2 className='text-l b'>{children.section}</h2>
             {children.doubleGrid &&
                 <ToggleDisplayMode setGridDisplay={setGridDisplay}/>
             }

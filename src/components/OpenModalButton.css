@@ -6,6 +6,7 @@
     box-shadow: inset 0 0 0 1px #ccd6f6;
     border: none;
     position: relative;
+    transition: all 0.15s;
 }
 
 .modal-open-button::before {

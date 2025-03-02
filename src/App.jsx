@@ -53,12 +53,12 @@ function App() {
     <>
       {showModal && <Modal closeProjectModal={closeProjectModal} content={modalContent}/>}
       <section className='section-owner'>
-        <img className='section-owner__image' src={repositories[0]?.owner.avatar_url || '/'} alt="image" />
+        <img className='section-owner__image' src={repositories[0]?.owner.avatar_url || '/'} alt="image of owner" loading="lazy"/>
         <div>
           <h1 className='text-xl'>{About.name}</h1>
-          <div className='text-l'>{About.role}</div>
+          <h2 className='text-l b'>{About.role}</h2>
         </div>
-        <div>{About.story}</div>
+        <p>{About.story}</p>
       </section>
 
       <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>

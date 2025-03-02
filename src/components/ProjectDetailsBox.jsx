@@ -25,15 +25,15 @@ function ProjectDetailsBox (details) {
     return (
         <>
             <div className={`project-card ${details.flexColumn ? 'flex-column unset-max-height' : ''}`}>
-                <img src={imageUrl} className={`project-card__image ${details.type === 'tech-stack' ? 'adjust-image' : ''} ${details.type === 'experience' ? 'sticky decreased-width' : ''}`} onClick={() => details.openProjectModal(details.name)} alt={`${details.company_name || 'project'} img`} />
+                <img src={imageUrl} loading="lazy" className={`project-card__image ${details.type === 'tech-stack' ? 'adjust-image' : ''} ${details.type === 'experience' ? 'sticky decreased-width' : ''}`} onClick={() => details.openProjectModal(details.name)} alt={`${details.company_name || 'project'} image`} />
                 <div className='project-card__details'>
                         <div>
-                            <div className="project-card__header">
+                            <div className="project-card__header b">
                                 {details.type === 'projects' && <div className='project-card__title'>{ details.name} - {datesString}</div>}
 
                                 {details.type === 'experience' && 
-                                    <div className='project-card__title text-center'>
-                                        <div className='text-l'>{details.company_name}</div>
+                                    <div className='project-card__title text-center b'>
+                                        <h3 className='text-l b'>{details.company_name}</h3>
                                         <div className='text-m'>{ details.position}, {`${datesString}`}</div>
                                     </div>
                                 }

@@ -8,10 +8,11 @@
     transition: all 0.15s;
     background-color: transparent;
     border: none;
+    font-weight: 700;
 }
 
 .footer__link:hover {
-    color: white;
+    color: #FFFFFF;
 }
 
 .footer__modal {
