@@ -4,7 +4,7 @@ function CloseModalButton (props) {
 
     return (
         <>
-            <button onClick={props.closeModal} className='modal__close-button'></button>
+            <button onClick={props.closeModal} aria-label="Close modal" className='modal__close-button'></button>
         </>
     )
 }

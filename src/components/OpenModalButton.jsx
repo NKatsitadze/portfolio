@@ -4,7 +4,7 @@ function OpenModalButton (props) {
 
     return (
         <>
-            <button className='modal-open-button' onClick={() => props.openProjectModal(props.detail)}></button>
+            <button className='modal-open-button' aria-label="Open modal" onClick={() => props.openProjectModal(props.detail)}></button>
         </>
     )
 }
