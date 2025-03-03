@@ -10,6 +10,7 @@ import About from '../about.json'
 import './App.css'
 import './index.css'
 import './Fonts.css'
+import './Medias.css'
 
 function App() {
   const [repositories, setRepositories] = useState([])
@@ -58,7 +59,14 @@ function App() {
           <h1 className='text-xl'>{About.name}</h1>
           <h2 className='text-l b'>{About.role}</h2>
         </div>
-        <p>{About.story}</p>
+        <p style={{ whiteSpace: "pre-line" }}>
+          {About.story.split("\n").map((line, i) => (
+            <span key={i}>
+              {String.fromCharCode(8226)} {line}
+              <br />
+            </span>
+          ))}
+        </p>
       </section>
 
       <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>

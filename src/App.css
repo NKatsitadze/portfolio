@@ -1,5 +1,7 @@
 .section-owner {
   height: 100vh;
+  width: 70%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;

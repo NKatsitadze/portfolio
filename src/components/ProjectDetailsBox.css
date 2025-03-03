@@ -44,6 +44,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    width: 100%;
     flex: 1;
 }
 
@@ -80,4 +81,8 @@
 
 .unset-max-height {
     max-height: unset;
+}
+
+.tech-ul {
+    text-align: center;
 }

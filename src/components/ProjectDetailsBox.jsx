@@ -43,7 +43,7 @@ function ProjectDetailsBox (details) {
                                 }
                             </div>
                             {details.type === 'projects' && <div className='project-card__description'>{details.description}</div>}
-                            <ul>
+                            <ul className={details.type === 'tech-stack' ? 'tech-ul' : ''}>
                                 {details.type === 'experience' && (details.responsibilities.map((each, i) => { return <li key={i}>{String.fromCharCode(8226)} {each}</li> }))}
                                 {details.type === 'tech-stack' && (details.stack.map((each, i) => { return <li key={i}>{String.fromCharCode(8226)} {each}</li> }))}
                             </ul>
