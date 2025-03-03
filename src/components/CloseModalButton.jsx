@@ -4,7 +4,7 @@ function CloseModalButton (props) {
 
     return (
         <>
-            <button onClick={props.closeModal} className='modal__close-button'>x</button>
+            <button onClick={props.closeModal} className='modal__close-button'></button>
         </>
     )
 }

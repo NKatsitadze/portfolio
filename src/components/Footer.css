@@ -3,6 +3,17 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.footer__link-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.footer__link-image {
+    height: 35px;
+}
+
 .footer__link {
     text-align: center;
     transition: all 0.15s;
