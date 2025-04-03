@@ -5,31 +5,18 @@
         "position": "Frontend Developer",
         "start": "2023-03-01T00:00:00Z",
         "responsibilities": [
-            "Building and optimizing dynamic, responsive UIs for client-side applications.",
-            "Reducing the loading time of our existing web and server side applications and reducing the DOM hier-archy.",
-            "Collaborating with Product Managers, UI/UX Designers, Product Owner on a daily basis.",
-            "Cleaning and Refactoring legacy code, turning JS modules into svelte components and PHP parts into Node.js modules.",
-            "Developing and implementing features on server side.",
-            "Creating company custom UI library and writing documentation.",
-            "Technologies: JavaScript, Svelte, Node, Express, PHP, MongoDB, Cypress, Tailwind."
+            "Developed a custom company UI library with 30 reusable, independent components, complete with thorough documentation, parameter mocks, and test coverage to ensure reliability and maintainability. (30 and still growing).",
+            "Build complex, dynamic client-side applications within a microfrontend architecture, implementing intricate UI logic and reusable modules to enhance maintainability and scalability.",
+            "Developing and optimizing server-side applications in PHP and Node.js, creating independent backend modules that interact seamlessly with MongoDB for efficient data manipulation.",
+            "Refactoring and modernizing legacy code, converting existing frontend modules into a modern component-based architecture and migrating backend logic to Node.js, while ensuring test coverage and comprehensive documentation.",
+            "Transforming a full web application into a modern Single Page Application (SPA), redesigning styles and improving maintainability, scalability, and user experience.",
+            "Enhancing accessibility, performance, and cross-browser compatibility across the entire project by conducting thorough testing with DevTools and optimizing key areas.",
+            "Actively collaborating with cross-functional teams, including Product Managers, UI/UX Designers, and Software Engineers, contributing ideas and improvements beyond assigned tasks.",
+            "Independently testing and optimizing deployments by verifying functionality on various devices, including old Android and iOS models, ensuring smooth performance across different environments.",
+            "Providing valuable input on project goals and user experience, proactively suggesting improvements to PMs, POs, and designers to enhance the application’s design, usability, and smoothness."
         ],
         "logo": "identomat.jpeg"
     },
-
-
-    {
-        "id": 1,
-        "company_name": "Freelance",
-        "position": "Frontend Developer",
-        "start": "2022-09-01T00:00:00Z",
-        "responsibilities": [
-            "Building websites, web apps, implementing features, making existing projects more user friendly, beautiful, dynamic and responsive with cross-browser compability.",
-            "Developing projects with clean and reusable components with docs.",
-            "Also working on server side with backend apps and databases, but still more frontend heavy."
-        ],
-        "logo": "freelance.png"
-    },
-
     {
         "id": 2,
         "company_name": "Bitoid",
@@ -37,9 +24,11 @@
         "start": "2022-10-01T00:00:00Z",
         "end": "2023-03-01T00:00:00Z",
         "responsibilities": [
-            "Working with a team, led by senior software engineers.",
-            "Creating UIs according to designs and instructions.",
-            "Making client side projects responsive, cross-browser compatible and user friendly."
+            "Developed and delivered multiple frontend projects, implementing scalable UI solutions using React and styled-components.",
+            "Received detailed code reviews from senior developers, improving best practices in performance, maintainability, and clean architecture.",
+            "Built responsive and accessible user interfaces, strengthening expertise in component-based architecture and state management.",
+            "Engaged in a highly collaborative environment, working on real-world challenges and refining problem-solving skills through hands-on development.",
+            "Gained hands-on experience with version control systems, primarily Git, to manage code and collaborate effectively within a development team."
         ],
         "logo": "bitoid.jpeg"
     }

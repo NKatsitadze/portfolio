@@ -4,6 +4,15 @@
     }
     .section-owner {
         width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section-owner p {
+        flex: unset !important;
+    }
+    .section-owner__flex {
+        flex: unset;
     }
     .project-card {
         flex-direction: column;

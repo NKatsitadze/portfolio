@@ -54,12 +54,14 @@ function App() {
     <>
       {showModal && <Modal closeProjectModal={closeProjectModal} content={modalContent}/>}
       <section className='section-owner'>
-        <img className='section-owner__image' src={repositories[0]?.owner.avatar_url || '/'} alt="image of owner" loading="lazy"/>
-        <div>
-          <h1 className='text-xl'>{About.name}</h1>
-          <h2 className='text-l b'>{About.role}</h2>
+        <div className='section-owner__flex'>
+          <img className='section-owner__image' src={repositories[0]?.owner.avatar_url || '/'} alt="image of owner" loading="lazy"/>
+          <div>
+            <h1 className='text-xl'>{About.name}</h1>
+            <h2 className='text-l b'>{About.role}</h2>
+          </div>
         </div>
-        <p style={{ whiteSpace: "pre-line" }}>
+        <p style={{ whiteSpace: "pre-line", flex: 1 }}>
           {About.story.split("\n").map((line, i) => (
             <span key={i}>
               {String.fromCharCode(8226)} {line}
