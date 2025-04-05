@@ -39,7 +39,7 @@ function App() {
           throw new Error("Network response was not ok")
         }
         const repos = await response.json()
-        setRepositories(repos)
+        setRepositories(repos.sort((a,b) => b.created_at.slice(0,4) - a.created_at.slice(0,4)))
       } catch (err) {
         // setError(err)
       } finally {
