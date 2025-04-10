@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Modal from './components/Modal'
 import Footer from './components/Footer'
 import Section from './components/Section'
+import OwnerSection from './components/OwnerSection'
 import { handleScroll } from '../helpers'
 import Experience from '../experience.json'
 import TechStack from '../tech-stack.json'
@@ -16,6 +18,7 @@ function App() {
   const [repositories, setRepositories] = useState([])
   const [showModal, setShowModal] = useState(false)
   const [modalContent, setModalContent] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
 
   const openProjectModal = (content) => {
     if(typeof content === 'string') setModalContent(repositories.find(e => e.name === content))
@@ -30,6 +33,10 @@ function App() {
     return () => handleScroll(false)
   }, [showModal])
 
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoading(false), 1000) // 1 second delay
+    return () => clearTimeout(timeout)
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,27 +59,32 @@ function App() {
 
   return (
     <>
-      {showModal && <Modal closeProjectModal={closeProjectModal} content={modalContent}/>}
-      <section className='section-owner'>
-        <div className='section-owner__flex'>
-          <img className='section-owner__image' src={repositories[0]?.owner.avatar_url || '/'} alt="image of owner" loading="lazy"/>
-          <div>
-            <h1 className='text-xl'>{About.name}</h1>
-            <h2 className='text-l b'>{About.role}</h2>
-          </div>
-        </div>
-        <p style={{ whiteSpace: "pre-line", flex: 1 }}>
-          {About.story.split("\n").map((line, i) => (
-            <span key={i}>
-              {String.fromCharCode(8226)} {line}
-              <br />
-            </span>
-          ))}
-        </p>
-      </section>
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            className="loading-overlay"
+            initial={{ y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: '-100%', opacity: 0 }}
+            transition={{ duration: 1, ease: 'easeInOut' }}
+          >
+            <motion.div
+              className="loader-content"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="loader-title">Welcome</h1>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>
+      {showModal && <Modal closeProjectModal={closeProjectModal} content={modalContent}/>}
+      <OwnerSection repositories={repositories} about={About}/>
       <Section section={"Projects"} type="projects" renderData={repositories.filter(e => e.stargazers_count > 0)} openProjectModal={openProjectModal} doubleGrid/>
+      <Section section={"Experience"} type="experience" renderData={Object.values(Experience)}/>
       <Section section={"Tech-stack"} type="tech-stack" renderData={Object.values(TechStack)} tripleGrid flexColumn/>
       <Footer openProjectModal={openProjectModal} closeProjectModal={closeProjectModal}/>
     </>

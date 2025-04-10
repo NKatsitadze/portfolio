@@ -12,9 +12,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "postbuild": "cp google7f8811d336b000f8.html dist/"
-
   },
   "dependencies": {
+    "framer-motion": "^12.6.3",
     "motion": "^12.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
