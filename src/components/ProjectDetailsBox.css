@@ -1,5 +1,5 @@
 .project-card {
-    box-shadow: inset 0 0 0 1px #bde5f5;
+    box-shadow: inset 0 0 0 1px #DDDDDD;
     display: flex;
     gap: 16px;
     align-items: center;
@@ -23,17 +23,15 @@
     background-color: #FFFFFF;
     border-radius: 6px;
     cursor: pointer;
-    filter: grayscale(0.5);
     transition: all 0.15s;
 }
 
 .project-card:hover .project-card__image {
-    filter: grayscale(0);
+    transform: scale(0.99);
 }
 
-.sticky {
-    position: sticky;
-    top: 0px;
+.project-card__description {
+    overflow-y: auto;
 }
 
 .decreased-width {
@@ -63,7 +61,7 @@
 
 .project-card__actions a {
     padding: 8px 20px;
-    box-shadow: inset 0 0 0 1px #bde5f5;
+    box-shadow: inset 0 0 0 1px #DDDDDD;
     border-radius: 4px;
     transition: all 0.15s;
 }

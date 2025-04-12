@@ -59,27 +59,44 @@ function App() {
 
   return (
     <>
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            className="loading-overlay"
-            initial={{ y: 0, opacity: 1 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: '-100%', opacity: 0 }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
+<AnimatePresence>
+  {isLoading && (
+    <motion.div
+      className="loading-overlay"
+      initial={{ y: 0, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: '-100%', opacity: 0 }}
+      transition={{ duration: 2, ease: 'easeInOut', delay: 1 }} // Delay fade-out to show overlay longer
+    >
+      <motion.div
+        className="loader-content"
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <h1 className="loader-title">
+          N.K.{' '}
+          <motion.span
+            className="blaze"
+            animate={{ 
+              textShadow: [
+                '0 0 0px #DDDDDD', 
+                '0 0 8px #DDDDDD', 
+                '0 0 16px #DDDDDD', 
+                '0 0 0px #DDDDDD'
+              ],
+              color: ['#DDDDDD', '#fff', '#DDDDDD'],
+            }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
           >
-            <motion.div
-              className="loader-content"
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="loader-title">Welcome</h1>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            portfolio
+          </motion.span>
+        </h1>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
       {showModal && <Modal closeProjectModal={closeProjectModal} content={modalContent}/>}
       <OwnerSection repositories={repositories} about={About}/>

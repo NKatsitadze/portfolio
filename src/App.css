@@ -75,21 +75,29 @@ button {
 .loading-overlay {
   position: fixed;
   inset: 0;
-  background-color: #111111;
+  background: #111111;
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 9999;
-  pointer-events: none;
+  align-items: center;
+  z-index: 50;
 }
 
 .loader-content {
   text-align: center;
-  color: #DDDDDD;
-  font-family: 'Poppins', sans-serif;
 }
 
 .loader-title {
-  font-size: 2rem;
-  letter-spacing: 2px;
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #DDDDDD;
 }
+
+.loader-title span {
+  font-size: 2rem;
+}
+
+.blaze {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+

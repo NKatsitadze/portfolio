@@ -25,9 +25,9 @@ function ProjectDetailsBox (details) {
     return (
         <>
             <div className={`project-card ${details.flexColumn ? 'flex-column unset-max-height' : ''}`}>
-                <img src={imageUrl} loading="lazy" className={`project-card__image ${details.type === 'tech-stack' ? 'adjust-image' : ''} ${details.type === 'experience' ? 'sticky decreased-width' : ''}`} onClick={() => details.openProjectModal(details.name)} alt={`${details.company_name || 'project'} image`} />
+                <img src={imageUrl} loading="lazy" className={`project-card__image ${details.type === 'tech-stack' ? 'adjust-image' : ''} ${details.type === 'experience' ? 'decreased-width' : ''}`} onClick={() => details.openProjectModal(details.name)} alt={`${details.company_name || 'project'} image`} />
                 <div className='project-card__details'>
-                        <div>
+                        <div className='project-card__description'>
                             <div className="project-card__header b">
                                 {details.type === 'projects' && <div className='project-card__title'>{ details.name} - {datesString}</div>}
 
