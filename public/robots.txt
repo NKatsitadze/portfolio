@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nkatsitadze.github.io/portfolio/sitemap.xml
+Sitemap: https://nkatsitadze.netlify.app/sitemap.xml
