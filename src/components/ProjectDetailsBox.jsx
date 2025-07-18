@@ -1,4 +1,3 @@
-import OpenModalButton from './OpenModalButton'
 import './ProjectDetailsBox.css'
 
 function ProjectDetailsBox (details) {
@@ -30,16 +29,13 @@ function ProjectDetailsBox (details) {
                         <div className='project-card__description'>
                             <div className="project-card__header b">
                                 {details.type === 'projects' && <div className='project-card__title'>{ details.name} - {datesString}</div>}
-
                                 {details.type === 'experience' && 
                                     <div className='project-card__title text-center b'>
-                                        <h3 className='text-l b'>{details.company_name}</h3>
-                                        <div className='text-m'>{ details.position}, {`${datesString}`}</div>
+                                        <div>
+                                            <h3 className='text-l b'>{details.company_name}</h3>
+                                            <div className='text-m'>{ details.position}, {`${datesString}`}</div>
+                                        </div>
                                     </div>
-                                }
-                                
-                                {details.type === 'projects' &&
-                                    <OpenModalButton openProjectModal={details.openProjectModal} detail={details.name}/>
                                 }
                             </div>
                             {details.type === 'projects' && <div className='project-card__description'>{details.description}</div>}

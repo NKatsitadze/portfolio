@@ -15,8 +15,9 @@
   display: flex;
   flex-direction: column;
   width: 95%;
+  height: 100svh;
+  overflow: hidden;
   margin: auto;
-  padding-bottom: 24px;
 }
 
 * {
@@ -27,3 +28,51 @@ body {
   margin: 0;
   background-color: #111111;
 }
+
+/* grid  */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: backgroundMove 15s linear infinite;
+}
+
+/* @keyframes backgroundMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 40px 40px, 40px 40px;
+  }
+} */
+
+/* aurora first  */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, #2a2a2a, #111111, #1f1f1f);
+  background-size: 200% 200%;
+  animation: auroraMove 10s ease-in-out infinite;
+  opacity: 0.3;
+  filter: blur(80px);
+}
+
+/* @keyframes auroraMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
