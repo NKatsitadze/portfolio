@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 12px;
   cursor: pointer;
 }
 
@@ -22,13 +22,11 @@
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #222;
 }
 
 .description {
   margin-top: 4px;
   font-size: 14px;
-  color: #666;
 }
 
 .toggleBtn {
@@ -52,6 +50,6 @@
 }
 
 .content {
-  padding: 16px;
-  border-top: 1px solid #ddd;
+  padding: 12px;
+  border-top: 1px solid #8f8f8f;
 }

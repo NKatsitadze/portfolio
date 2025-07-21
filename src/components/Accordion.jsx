@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import styles from './Accordion.module.css'
 
-export default function Accordion({ title, description, children }) {
+export default function Accordion({ title, children }) {
   const [isOpen, setIsOpen] = useState(false)
   const [maxHeight, setMaxHeight] = useState(0)
   const contentRef = useRef(null)
@@ -19,7 +19,6 @@ export default function Accordion({ title, description, children }) {
       <div className={styles.header} onClick={() => setIsOpen(prev => !prev)}>
         <div className={styles.texts}>
           <h3 className={styles.title}>{title}</h3>
-          {description && <p className={styles.description}>{description}</p>}
         </div>
         <button className={styles.toggleBtn} aria-label="Toggle accordion">
           <img

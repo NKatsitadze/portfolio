@@ -1,0 +1,101 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  gap: 12px;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  transition: transform 0.4s ease;
+}
+
+/* Slide out animations */
+.slideOutLeft {
+  animation: slideOutLeft 0.4s forwards;
+}
+.slideOutRight {
+  animation: slideOutRight 0.4s forwards;
+}
+
+/* Slide in animations */
+.slideInRight {
+  animation: slideInFromRight 0.4s forwards;
+}
+.slideInLeft {
+  animation: slideInFromLeft 0.4s forwards;
+}
+
+/* Keyframes */
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+}
+
+.navBtn {
+  background-color: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.navBtn:hover {
+  background-color: #ccc;
+}
