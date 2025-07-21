@@ -101,3 +101,17 @@ body::before {
 .items-center {
   align-items: center;
 }
+
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+
+.flex-1 {
+  flex: 1;
+}
+.flex-0 {
+  flex: 0;
+}

@@ -79,23 +79,22 @@
 .buttons {
   display: flex;
   gap: 16px;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-around;
+  width: 50%;
 }
 
 .navBtn {
-  background-color: #eee;
-  border: none;
-  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid#DDDDDD;
+  color: #DDDDDD;
+  border-radius: 8px;
   width: 36px;
   height: 36px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #555;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
-.navBtn:hover {
-  background-color: #ccc;
+.chevron {
+  font-size: 24px;
+  line-height: 1;
 }

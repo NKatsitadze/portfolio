@@ -6,6 +6,7 @@ export default function Gallery({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [prevIndex, setPrevIndex] = useState(null)
   const [direction, setDirection] = useState(0)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     images.forEach((src) => {
@@ -19,6 +20,7 @@ export default function Gallery({ images }) {
 
     setDirection(dir)
     setPrevIndex(currentIndex)
+    setIsLoading(true)
 
     setCurrentIndex((prev) => {
       if (dir === 1) return (prev + 1) % images.length
@@ -58,14 +60,19 @@ export default function Gallery({ images }) {
           key={`current-${currentIndex}`}
           src={images[currentIndex]}
           alt=""
-          className={`${styles.image} ${direction === 1 ? styles.slideInRight : direction === -1 ? styles.slideInLeft : ''}`}
+          onLoad={() => setIsLoading(false)}
+          className={`${styles.image} ${direction === 1 ? styles.slideInRight : direction === -1 ? styles.slideInLeft : ''} ${isLoading ? styles.loading : ''}`}
           draggable={false}
         />
       </div>
 
       <div className={styles.buttons}>
-        <button onClick={() => handleNav(-1)} className={styles.navBtn}>‹</button>
-        <button onClick={() => handleNav(1)} className={styles.navBtn}>›</button>
+        <button onClick={() => handleNav(-1)} className={styles.navBtn}>
+          <span className={styles.chevron}>&lsaquo;</span>
+        </button>
+        <button onClick={() => handleNav(1)} className={styles.navBtn}>
+          <span className={styles.chevron}>&rsaquo;</span>
+        </button>
       </div>
     </div>
   )

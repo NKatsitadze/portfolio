@@ -1,0 +1,56 @@
+[
+    {
+        "key": "finance-app",
+        "sentences": [
+            "The finance-app is a comprehensive personal finance dashboard designed to help users take control of their money. It enables tracking of income, expenses, budgets, savings goals, and recurring bills — all in one place. With clear visualizations and interactive features, users can monitor their financial health, make informed decisions, and plan for the future with ease."
+        ]    
+    },
+    {
+        "key": "Entertainment-Web-App",
+        "sentences": [
+            "This app provides a user-friendly platform to explore movies and TV series with mock data. Users can browse, search, and bookmark their favorite entertainment content seamlessly across devices. Its responsive design and interactive features make discovering and managing entertainment effortless and enjoyable."
+        ]
+    },
+    {
+        "key": "Opportunities",
+        "sentences": [
+            "Opportunities project visualizes complex sales opportunity data through intuitive charts and interactive UI. It helps sales teams better understand deal stages, win probabilities, rep performance, and influencing factors. With rich visuals and historical trends, the tool simplifies decision-making and gives reps and managers a clearer view of deal health and progress."
+        ]
+    },
+    {
+        "key": "Planets",
+        "sentences": [
+            "This project is a sleek, interactive website showcasing detailed facts about each planet in our solar system. Users can explore core data—such as rotation time, revolution time, radius, and average temperature—through a clean, responsive interface. With theme toggling (e.g., dark and light mode) and mobile-first design, the site offers an engaging and educational experience across devices."
+        ]
+    },
+    {
+        "key": "Reproductology-Institute",
+        "sentences": [
+            "This website serves as a professional front-end showcase for a reproductive health clinic, offering visitors a clean, informative, and user-friendly experience. It features detailed service descriptions, doctor profiles, and contact options presented through a responsive and accessible design. Built with modern web technologies, this site emphasizes clear navigation, aesthetic appeal, and reliability, making it ideal for healthcare audiences."
+        ]
+    },
+    {
+        "key": "BMW-Bootstrap",
+        "sentences": [
+            "This was one of the very first projects I built while learning frontend development, before I had any professional experience or even knew JavaScript. I used pure HTML and Bootstrap to recreate a modern-looking landing page inspired by BMW’s design language. The goal was to practice responsive layouts, visual structure, and styling using Bootstrap's grid system and utility classes. Even though it’s a simple static site, this project marked a key milestone in my learning journey and helped me gain confidence in structuring and styling real-world UI."
+        ]
+    },
+    {
+        "key": "Mapty-Advanced",
+        "sentences": [
+            "This project was built as part of my early JavaScript learning journey. It’s a geolocation-based workout tracking app where users can log running and cycling workouts by clicking on a map. The app stores entries in localStorage, displays interactive workout pins on the map, and shows logged workout details below. I built it using vanilla JavaScript, the Leaflet.js library for mapping, and browser APIs like Geolocation and LocalStorage. It helped me understand DOM manipulation, event handling, class-based programming, and working with third-party libraries—all while creating something genuinely fun to use."
+        ]
+    },
+    {
+        "key": "Natours",
+        "sentences": [
+            "Natours is a beautiful landing page project I built while learning HTML, CSS, and basic SASS. It showcases a fictional tour agency with modern layouts, clean typography, engaging hover effects, and smooth transitions. The focus was on mastering responsive design and reusable UI components like cards, modals, and hero sections—all without JavaScript."
+        ]
+    },    
+    {
+        "key": "Nexter-Real-Estate",
+        "sentences": [
+            "Responsive real estate landing page using HTML, CSS Grid, and SASS—without any JavaScript. It features a modern layout showcasing property listings, agent info, testimonials, and key metrics in a visually appealing, grid-based design. Nexter helped me deeply understand CSS Grid, responsive layout techniques, and writing structured SASS using partials and variables."
+        ]
+    }
+]
