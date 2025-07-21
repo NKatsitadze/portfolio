@@ -1,9 +1,9 @@
 .accordion {
   border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .header {
@@ -35,20 +35,23 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 18px;
-  color: #333;
+  padding: 4px;
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
-}
-
-.content {
-  padding: 16px;
-  border-top: 1px solid #eee;
 }
 
 .chevronIcon {
   width: 18px;
   height: 18px;
   transition: transform 0.3s ease;
+}
+
+.contentWrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.content {
+  padding: 16px;
+  border-top: 1px solid #ddd;
 }

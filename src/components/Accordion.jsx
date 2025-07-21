@@ -1,16 +1,22 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import styles from './Accordion.module.css'
 
 export default function Accordion({ title, description, children }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [maxHeight, setMaxHeight] = useState(0)
+  const contentRef = useRef(null)
 
-  const toggleAccordion = () => {
-    setIsOpen(prev => !prev)
-  }
+  useEffect(() => {
+    if (isOpen && contentRef.current) {
+      setMaxHeight(contentRef.current.scrollHeight)
+    } else {
+      setMaxHeight(0)
+    }
+  }, [isOpen])
 
   return (
     <div className={styles.accordion}>
-      <div className={styles.header} onClick={toggleAccordion}>
+      <div className={styles.header} onClick={() => setIsOpen(prev => !prev)}>
         <div className={styles.texts}>
           <h3 className={styles.title}>{title}</h3>
           {description && <p className={styles.description}>{description}</p>}
@@ -24,7 +30,13 @@ export default function Accordion({ title, description, children }) {
         </button>
       </div>
 
-      {isOpen && <div className={styles.content}>{children}</div>}
+      <div
+        ref={contentRef}
+        className={styles.contentWrapper}
+        style={{ maxHeight: `${maxHeight}px` }}
+      >
+        <div className={styles.content}>{children}</div>
+      </div>
     </div>
   )
 }
