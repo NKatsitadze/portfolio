@@ -6,7 +6,7 @@ const phrases = [
   "Full-stack coverage",
   "Pixel-perfect, flexible UIs",
   "Optimizing and improving workflows",
-];
+]
 
 export default function OwnerSection({ repositories, about }) {
   const [index, setIndex] = useState(0);

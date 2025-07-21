@@ -23,8 +23,7 @@
   opacity: 0;
   transform: scale(0.9);
   /* animation: fadeInZoom 1.2s ease-out forwards; */
-    animation: fadeInZoom 1.2s ease-out forwards, floatY 6s ease-in-out infinite;
-
+  animation: fadeInZoom 1.2s ease-out forwards, floatY 6s ease-in-out infinite;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   will-change: transform, opacity;
 }
@@ -35,7 +34,7 @@
   50% {
     transform: translateY(-8px) scale(1.01);
   }
-}
+} */
 
 .section-owner__image:hover {
   transform: scale(1.05) rotate(1deg);
@@ -52,7 +51,7 @@
     opacity: 1;
     transform: scale(1) translateY(0);
   }
-} */
+}
 
 
 .section-adjust {

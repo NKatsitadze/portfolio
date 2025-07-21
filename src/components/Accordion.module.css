@@ -1,0 +1,54 @@
+.accordion {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.texts {
+  flex: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.description {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #666;
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.content {
+  padding: 16px;
+  border-top: 1px solid #eee;
+}
+
+.chevronIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}

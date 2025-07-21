@@ -15,7 +15,8 @@
             "Independently testing and optimizing deployments by verifying functionality on various devices, including old Android and iOS models, ensuring smooth performance across different environments.",
             "Providing valuable input on project goals and user experience, proactively suggesting improvements to PMs, POs, and designers to enhance the application’s design, usability, and smoothness."
         ],
-        "logo": "identomat.jpeg"
+        "logo": "identomat.jpeg",
+        "homepage": "https://identomat.com"
     },
     {
         "id": 2,
@@ -30,7 +31,8 @@
             "Engaged in a highly collaborative environment, working on real-world challenges and refining problem-solving skills through hands-on development.",
             "Gained hands-on experience with version control systems, primarily Git, to manage code and collaborate effectively within a development team."
         ],
-        "logo": "bitoid.jpeg"
+        "logo": "bitoid.jpeg",
+        "homepage": "https://www.linkedin.com/company/bitoid-technologies/"
     }
 ]
   

@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import HomePage from './pages/HomePage'
+import ProjectsPage from './pages/ProjectsPage'
 
 import './App.css'
 import './index.css'
@@ -55,7 +56,7 @@ function App() {
         },
         {
           path: 'projects',
-          element: <div>Projects Page – to be implemented</div>
+          element: <ProjectsPage repositories={repositories}/>
         },
         {
           path: 'experience',

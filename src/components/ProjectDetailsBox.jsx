@@ -24,7 +24,40 @@ function ProjectDetailsBox (details) {
     return (
         <>
             <div className={`project-card ${details.flexColumn ? 'flex-column unset-max-height' : ''}`}>
-                <img src={imageUrl} loading="lazy" className={`project-card__image ${details.type === 'tech-stack' ? 'adjust-image' : ''} ${details.type === 'experience' ? 'decreased-width' : ''}`} onClick={() => details.openProjectModal(details.name)} alt={`${details.company_name || 'project'} image`} />
+
+                <div className={`project-card__image-wrapper ${details.company_name ? 'has-overlay' : ''}`}>
+                <img
+                    src={imageUrl}
+                    loading="lazy"
+                    className={`project-card__image ${details.type === 'tech-stack' ? 'adjust-image' : ''} ${details.type === 'experience' ? 'decreased-width' : ''}`}
+                    onClick={() => details.openProjectModal && details.openProjectModal(details.name)}
+                    alt={`${details.company_name || 'project'} image`}
+                />
+                {details.company_name && (
+                    <a
+                    href={details.homepage || details.html_url || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card__image-overlay"
+                    >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="48"
+                        height="48"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#111"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <path d="M10 13a5 5 0 0 1 7 7l-1.5 1.5a5 5 0 0 1-7-7l1.5-1.5"></path>
+                        <path d="M14 11a5 5 0 0 0-7-7L5.5 5.5a5 5 0 0 0 7 7L14 11"></path>
+                    </svg>
+                    </a>
+                )}
+                </div>
+
                 <div className='project-card__details'>
                         <div className='project-card__description'>
                             <div className="project-card__header b">
