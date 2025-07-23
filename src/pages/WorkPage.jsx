@@ -1,51 +1,36 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from "react"
 import Accordion from "../components/Accordion"
 import styles from './css/WorkPage.module.css'
 
-function LazyVideo({ src, alt }) {
-  const videoRef = useRef(null)
+// Helper function to check mobile/tablet
+function useIsMobileDevice() {
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          // Try playing the video
-          video.play().catch((e) => {
-            console.warn(`Autoplay failed for ${src}:`, e)
-          })
-        } else {
-          // Pause if out of view
-          video.pause()
-        }
-      },
-      { threshold: 0.3 }
-    )
-
-    observer.observe(video)
-
-    return () => observer.unobserve(video)
+    const check = () => {
+      const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i,
+        /Opera Mini/i,
+      ]
+      setIsMobile(toMatch.some((toMatchItem) => navigator.userAgent.match(toMatchItem)))
+    }
+    check()
+    window.addEventListener("resize", check)
+    return () => window.removeEventListener("resize", check)
   }, [])
 
-  return (
-    <video
-      ref={videoRef}
-      src={src}
-      loop
-      muted
-      playsInline
-      autoPlay
-      className={styles['feature-video']}
-    >
-      Your browser does not support the video tag.
-    </video>
-  )
+  return isMobile
 }
 
-
 export default function WorkPage() {
+  const isMobile = useIsMobileDevice()
+
   const identomatDetails = [
     {
       title: "Dashboard",
@@ -102,7 +87,14 @@ export default function WorkPage() {
                   className={styles['feature-video']}
                 />
               ) : (
-                <LazyVideo src={item.src} alt={item.title} />
+                <video
+                  src={item.src}
+                  loop
+                  muted
+                  playsInline
+                  className={styles['feature-video']}
+                  {...(isMobile ? { controls: true } : { autoPlay: true })}
+                />
               )}
               <div>
                 <h4 className="text-lg font-semibold">{item.title}</h4>
