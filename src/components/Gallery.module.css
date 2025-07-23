@@ -46,6 +46,59 @@
   line-height: 1;
 }
 
+/* Slide out animations */
+.slideOutLeft {
+  animation: slideOutLeft 0.4s forwards;
+}
+.slideOutRight {
+  animation: slideOutRight 0.4s forwards;
+}
+
+/* Slide in animations */
+.slideInRight {
+  animation: slideInFromRight 0.4s forwards;
+}
+.slideInLeft {
+  animation: slideInFromLeft 0.4s forwards;
+}
+
+/* Keyframes */
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 43.75rem) { /* 700px */
   .gallery {
     width: 100%;
