@@ -1,5 +1,49 @@
+import { useEffect, useRef } from 'react'
 import Accordion from "../components/Accordion"
 import styles from './css/WorkPage.module.css'
+
+function LazyVideo({ src, alt }) {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Try playing the video
+          video.play().catch((e) => {
+            console.warn(`Autoplay failed for ${src}:`, e)
+          })
+        } else {
+          // Pause if out of view
+          video.pause()
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    observer.observe(video)
+
+    return () => observer.unobserve(video)
+  }, [])
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      loop
+      muted
+      playsInline
+      autoPlay
+      className={styles['feature-video']}
+    >
+      Your browser does not support the video tag.
+    </video>
+  )
+}
+
 
 export default function WorkPage() {
   const identomatDetails = [
@@ -58,14 +102,7 @@ export default function WorkPage() {
                   className={styles['feature-video']}
                 />
               ) : (
-                <video
-                  src={item.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className={styles['feature-video']}
-                />
+                <LazyVideo src={item.src} alt={item.title} />
               )}
               <div>
                 <h4 className="text-lg font-semibold">{item.title}</h4>
