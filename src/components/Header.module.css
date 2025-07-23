@@ -1,6 +1,7 @@
 header {
     height: 60px;
     padding: 0rem 2rem;
+    border-bottom: 1px solid #777777;
 }
 
 nav {

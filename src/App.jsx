@@ -74,14 +74,6 @@ function App() {
 
   return (
     <>
-      <div className="particle-container">
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-      </div>
-      
       <AnimatePresence>
         {isLoading && (
           <motion.div

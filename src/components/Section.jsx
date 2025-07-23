@@ -23,7 +23,7 @@ function Section (children) {
 
     const linkMap = {
       projects: 'projects',
-      experience: 'experience',
+      experience: 'work',
       "tech-stack": 'about-contact'
     }
 

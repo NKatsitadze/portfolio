@@ -5,7 +5,6 @@ import styles from './Gallery.module.css'
 export default function Gallery({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [prevIndex, setPrevIndex] = useState(null)
-  const [direction, setDirection] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -18,7 +17,6 @@ export default function Gallery({ images }) {
   const handleNav = (dir) => {
     if (images.length <= 1) return
 
-    setDirection(dir)
     setPrevIndex(currentIndex)
     setIsLoading(true)
 
@@ -52,7 +50,7 @@ export default function Gallery({ images }) {
             key={`prev-${prevIndex}`}
             src={images[prevIndex]}
             alt=""
-            className={`${styles.image} ${direction === 1 ? styles.slideOutLeft : styles.slideOutRight}`}
+            className={`${styles.image}`}
             draggable={false}
           />
         )}
@@ -61,7 +59,7 @@ export default function Gallery({ images }) {
           src={images[currentIndex]}
           alt=""
           onLoad={() => setIsLoading(false)}
-          className={`${styles.image} ${direction === 1 ? styles.slideInRight : direction === -1 ? styles.slideInLeft : ''} ${isLoading ? styles.loading : ''}`}
+          className={`${styles.image} ${isLoading ? styles.loading : ''}`}
           draggable={false}
         />
       </div>

@@ -20,39 +20,23 @@
   object-fit: contain;
   align-self: center;
   border-radius: 50%;
-  opacity: 0;
-  transform: scale(0.9);
-  /* animation: fadeInZoom 1.2s ease-out forwards; */
-  animation: fadeInZoom 1.2s ease-out forwards, floatY 6s ease-in-out infinite;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   will-change: transform, opacity;
 }
-/* @keyframes floatY {
+@keyframes floatY {
   0%, 100% {
     transform: translateY(0px) scale(1);
   }
   50% {
     transform: translateY(-8px) scale(1.01);
   }
-} */
+}
 
 .section-owner__image:hover {
-  transform: scale(1.05) rotate(1deg);
+  transform: scale(1.01) rotate(1deg);
   box-shadow: 0 0 24px rgba(221, 221, 221, 0.15),
               0 0 40px rgba(221, 221, 221, 0.05);
 }
-
-@keyframes fadeInZoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
 
 .section-adjust {
   display: flex;
@@ -141,58 +125,3 @@ button {
   color: #DDDDDD;
   font-weight: 500;
 }
-
-.particle-container {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.particle {
-  position: absolute;
-  bottom: -100px;
-  width: 20px;
-  height: 20px;
-  background: rgb(36, 36, 36);
-  border-radius: 50%;
-  animation: floatUp 20s linear infinite;
-}
-
-.particle:nth-child(1) {
-  left: 10%;
-  animation-delay: 0s;
-  animation-duration: 25s;
-}
-.particle:nth-child(2) {
-  left: 30%;
-  animation-delay: 5s;
-}
-.particle:nth-child(3) {
-  left: 50%;
-  animation-delay: 10s;
-  animation-duration: 30s;
-}
-.particle:nth-child(4) {
-  left: 70%;
-  animation-delay: 15s;
-}
-.particle:nth-child(5) {
-  left: 90%;
-  animation-delay: 20s;
-  animation-duration: 35s;
-}
-
-/* @keyframes floatUp {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  100% {
-    transform: translateY(-120vh) scale(1.5);
-    opacity: 0;
-  }
-} */

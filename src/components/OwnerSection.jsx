@@ -24,16 +24,12 @@ export default function OwnerSection({ repositories, about }) {
       <div className="section-owner__flex">
         <div className="tagline-container">
           <AnimatePresence mode="wait">
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 0.5 }}
               className="tagline"
             >
               {phrases[index]}
-            </motion.div>
+            </div>
           </AnimatePresence>
         </div>
 
