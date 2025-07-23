@@ -19,8 +19,8 @@ export default function ProjectsPage({ repositories }) {
 
         return (
           <Accordion key={repo.id || i} title={repo.name}>
-            <div className="flex justify-around items-center gap-4">
-              <div className="flex-1" style={{maxWidth: '50%'}}>
+            <div className="projects-item flex justify-around items-center gap-4">
+              <div className="projects-item-text flex-1" style={{maxWidth: '50%'}}>
                 {sentences.map((text, idx) => (
                   <p key={idx} className="">
                     {text}

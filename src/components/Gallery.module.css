@@ -98,3 +98,9 @@
   font-size: 24px;
   line-height: 1;
 }
+
+@media (max-width: 43.75rem) { /* 700px */
+  .gallery {
+    width: 100%;
+  }
+}

@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Header from './components/Header'
 import HomePage from './pages/HomePage'
 import ProjectsPage from './pages/ProjectsPage'
+import WorkPage from './pages/WorkPage'
+import About from './pages/About'
 
 import './App.css'
 import './index.css'
@@ -14,7 +16,7 @@ function Layout({ repositories }) {
   return (
     <>
       <Header />
-      <main style={{ flex: 1, overflow: 'auto' }}>
+      <main className='main-container' style={{ flex: 1, overflow: 'auto', paddingTop: '1rem', paddingLeft: '2rem', paddingRight: '2rem' }}>
         <Outlet context={{ repositories }} />
       </main>
     </>
@@ -59,12 +61,12 @@ function App() {
           element: <ProjectsPage repositories={repositories}/>
         },
         {
-          path: 'experience',
-          element: <div>Work Page – to be implemented</div>
+          path: 'work',
+          element: <WorkPage/>
         },
         {
           path: 'about-contact',
-          element: <div>About/Contact Page – to be implemented</div>
+          element: <About/>
         }
       ]
     }

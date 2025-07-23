@@ -14,7 +14,6 @@
 #root {
   display: flex;
   flex-direction: column;
-  width: 95%;
   height: 100svh;
   overflow: hidden;
   margin: auto;
@@ -42,14 +41,14 @@ body::after {
   animation: backgroundMove 15s linear infinite;
 }
 
-/* @keyframes backgroundMove {
+@keyframes backgroundMove {
   0% {
     background-position: 0 0, 0 0;
   }
   100% {
     background-position: 40px 40px, 40px 40px;
   }
-}  */
+} 
 
 /* aurora first  */
 body::before {
@@ -64,7 +63,7 @@ body::before {
   filter: blur(80px);
 }
 
- /* @keyframes auroraMove {
+ @keyframes auroraMove {
   0% {
     background-position: 0% 50%;
   }
@@ -74,7 +73,7 @@ body::before {
   100% {
     background-position: 0% 50%;
   }
-}  */
+} 
 
 
 .flex {
@@ -114,4 +113,12 @@ body::before {
 }
 .flex-0 {
   flex: 0;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: 1fr 1fr;
 }

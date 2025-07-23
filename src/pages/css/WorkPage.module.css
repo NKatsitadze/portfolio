@@ -1,0 +1,18 @@
+.feature-video {
+    height: 100%;
+    width: 35%;
+}
+
+img {
+    object-fit: cover;
+}
+
+@media (max-width: 50rem) { /* 800px */
+  .work-item {
+    flex-direction: column;
+  }
+  .feature-video {
+    max-height: 300px;
+    width: 100%;
+  }
+}

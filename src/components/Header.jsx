@@ -1,14 +1,16 @@
-import React from 'react'
+import styles from './Header.module.css'
 import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
-    <header style={{ padding: '1rem', color: '#fff' }}>
-      <nav style={{ display: 'flex', gap: '1.5rem' }}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/work">Work</NavLink>
-        <NavLink to="/about-contact">About / Contact</NavLink>
+    <header>
+      <nav>
+        <NavLink to="/"><img className={styles.logo} src="/logo.png" alt="logo" /></NavLink>
+        <div className={styles['justify-helper']}>
+          <NavLink to="/projects" className={({ isActive }) => isActive ? styles.active : undefined}>Projects</NavLink>
+          <NavLink to="/work" className={({ isActive }) => isActive ? styles.active : undefined}>Work</NavLink>
+          <NavLink to="/about-contact" className={({ isActive }) => isActive ? styles.active : undefined}>About</NavLink>
+        </div>
       </nav>
     </header>
   )

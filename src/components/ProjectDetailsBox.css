@@ -16,11 +16,9 @@
 }
 
 .project-card__image {
-    width: 40%;
-    max-width: 350px;
     max-height: 200px;
     object-fit: contain;
-    background-color: #FFFFFF;
+    background-color: #DDDDDD;
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.15s;
@@ -102,9 +100,6 @@
 .project-card__image-wrapper {
   position: relative;
   display: inline-block;
-  width: 40%;
-  max-width: 350px;
-  max-height: 200px;
 }
 
 .project-card__image {
@@ -112,7 +107,7 @@
   height: 100%;
   object-fit: contain;
   border-radius: 6px;
-  background-color: #FFF;
+  background-color: #FFFFFF;
   transition: opacity 0.3s ease;
   display: block;
   z-index: 1;
@@ -124,7 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: #FFFFFF;
   border-radius: 6px;
   opacity: 0;
   transition: opacity 0.3s ease;
