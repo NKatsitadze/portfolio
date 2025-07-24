@@ -1,5 +1,53 @@
+import { useEffect, useState } from "react"
 import Accordion from "../components/Accordion"
 import styles from './css/WorkPage.module.css'
+
+// Helper component to delay rendering until media is loaded
+function MediaItem({ item }) {
+  const [isReady, setIsReady] = useState(false)
+
+  useEffect(() => {
+    const el = document.createElement(item.type === 'image' ? 'img' : 'video')
+    el.src = item.src
+
+    const handleLoad = () => setIsReady(true)
+
+    if (item.type === 'image') {
+      if (el.complete) setIsReady(true)
+      else el.onload = handleLoad
+    } else {
+      if (el.readyState >= 3) setIsReady(true) // readyState 3 = HAVE_FUTURE_DATA
+      else el.onloadeddata = handleLoad
+    }
+  }, [item])
+
+  if (!isReady) return null
+
+  return (
+    <div className={`${styles['work-item']} flex gap-4 items-start`}>
+      {item.type === 'image' ? (
+        <img
+          src={item.src}
+          alt={item.title}
+          className={styles['feature-video']}
+        />
+      ) : (
+        <video
+          src={item.src}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={styles['feature-video']}
+        />
+      )}
+      <div>
+        <h4 className="text-lg font-semibold">{item.title}</h4>
+        <p className="text-gray-600">{item.description}</p>
+      </div>
+    </div>
+  )
+}
 
 export default function WorkPage() {
   const identomatDetails = [
@@ -50,45 +98,14 @@ export default function WorkPage() {
       <Accordion title="Identomat">
         <div className="grid gap-4">
           {identomatDetails.map((item, idx) => (
-            <div key={idx} className={`${styles['work-item']} flex gap-4 items-start`}>
-              {item.type === 'image' ? (
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className={styles['feature-video']}
-                />
-              ) : (
-                <video
-                  src={item.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className={styles['feature-video']}
-                />
-              )}
-              <div>
-                <h4 className="text-lg font-semibold">{item.title}</h4>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            </div>
+            <MediaItem key={idx} item={item} />
           ))}
         </div>
       </Accordion>
       <Accordion title="Bitoid">
         <div className="grid gap-4">
           {bitoidDetails.map((item, idx) => (
-            <div key={idx} className={`${styles['work-item']} flex gap-4 items-start`}>
-              <img
-                src={item.src}
-                alt={item.title}
-                className={styles['feature-video']}
-              />
-              <div>
-                <h4 className="text-lg font-semibold">{item.title}</h4>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            </div>
+            <MediaItem key={idx} item={item} />
           ))}
         </div>
       </Accordion>
