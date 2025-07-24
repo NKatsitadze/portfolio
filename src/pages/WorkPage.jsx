@@ -1,61 +1,32 @@
-import { useEffect, useState } from "react"
 import Accordion from "../components/Accordion"
 import styles from './css/WorkPage.module.css'
 
-// Helper function to check mobile/tablet
-function useIsMobileDevice() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const check = () => {
-      const toMatch = [
-        /Android/i,
-        /webOS/i,
-        /iPhone/i,
-        /iPad/i,
-        /iPod/i,
-        /BlackBerry/i,
-        /Windows Phone/i,
-        /Opera Mini/i,
-      ]
-      setIsMobile(toMatch.some((toMatchItem) => navigator.userAgent.match(toMatchItem)))
-    }
-    check()
-    window.addEventListener("resize", check)
-    return () => window.removeEventListener("resize", check)
-  }, [])
-
-  return isMobile
-}
-
 export default function WorkPage() {
-  const isMobile = useIsMobileDevice()
-
   const identomatDetails = [
     {
       title: "Dashboard",
       description: `Developed a comprehensive dashboard to oversee identity verification sessions. It presents key session data including status (approved, rejected, manual check, abandoned), rejection reasons and facial similarity scores.
                     Clients can filter sessions by date and companies to analyze performance trends or investigate specific cases. The dashboard also highlights real-time sanctions checks, document validation results and video call insights — such as session count and total duration.
                     Built with usability in mind, it helps compliance and operations teams quickly assess identity outcomes and make informed decisions without needing to dig through raw data.`,
-      src: "/videos/dashboard.webm",
+      src: "/videos/dashboard.mp4",
     },
     {
       title: "Configurations",
       description: `Worked alongside the team on building a flexible configuration system that allows teams to customize the structure and behavior of identity verification flows. Users can define general settings like public URL, language, session rules and notifications, while also visually managing the steps of the session through a drag-and-drop interface.
                     Each session step can be reordered and fully customized through an intuitive panel. This setup makes it easy to build tailored verification experiences without writing code, adapting to different business or regulatory needs with just a few clicks.`,
-      src: "/videos/configs.webm",
+      src: "/videos/configs.mp4",
     },
     {
       title: "Video call",
       description: `Contributed to the development of a real-time video call system built with Twilio, designed to enable secure communication between users and operators during the identity verification process. The system supports both single and multi-participant calls, with operators able to manually initiate sessions.
                     While the user progresses through the verification flow, the video call remains active, allowing operators to provide live assistance when needed. Virtual background support was also added to enhance user privacy and experience. This feature was developed collaboratively to ensure smoother, more guided identity checks.`,
-      src: "/videos/call.webm",
+      src: "/videos/call.mp4",
     },
     {
       title: "Company settings",
       description: `Developed the frontend for a company settings page that displays and manages configuration details for each client company in the system. Each company has its own customizable profile, including branding (logos, favicons, login images, virtual backgrounds), company colors, security and verification rules, authentication methods, communication providers and callback settings.
                     The backend logic and service modules were handled by a colleague, while I focused on building the entire frontend interface — ensuring a clear, intuitive experience for managing complex company-level settings.`,
-      src: "/videos/company.webm",
+      src: "/videos/company.mp4",
     },
     {
       title: "UI library",
@@ -89,11 +60,11 @@ export default function WorkPage() {
               ) : (
                 <video
                   src={item.src}
+                  autoPlay
                   loop
                   muted
                   playsInline
                   className={styles['feature-video']}
-                  {...(isMobile ? { controls: true } : { autoPlay: true })}
                 />
               )}
               <div>
