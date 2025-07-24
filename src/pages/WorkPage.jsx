@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"
 import Accordion from "../components/Accordion"
 import styles from './css/WorkPage.module.css'
 
@@ -45,6 +46,15 @@ export default function WorkPage() {
     }
   ]
 
+  const [videoLoadCount, setVideoLoadCount] = useState(0)
+  const videoTotal = identomatDetails.filter(item => item.type !== 'image').length
+
+  const handleVideoLoaded = () => {
+    setVideoLoadCount((prev) => prev + 1)
+  }
+
+  const allVideosLoaded = videoLoadCount >= videoTotal
+
   return (
     <section className="flex flex-col gap-4">
       <Accordion title="Identomat">
@@ -65,6 +75,7 @@ export default function WorkPage() {
                   muted
                   playsInline
                   className={styles['feature-video']}
+                  onLoadedData={handleVideoLoaded}
                 />
               )}
               <div>
@@ -74,7 +85,13 @@ export default function WorkPage() {
             </div>
           ))}
         </div>
+        {!allVideosLoaded && (
+          <div className="text-sm text-gray-500 px-4 pt-2">
+            Loading videos... {videoLoadCount}/{videoTotal}
+          </div>
+        )}
       </Accordion>
+
       <Accordion title="Bitoid">
         <div className="grid gap-4">
           {bitoidDetails.map((item, idx) => (
