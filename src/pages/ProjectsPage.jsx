@@ -22,8 +22,18 @@ export default function ProjectsPage({ repositories }) {
             <div className="projects-item flex justify-around items-center gap-4">
               <div className="projects-item-text flex-1" style={{maxWidth: '50%'}}>
                 {sentences.map((text, idx) => (
-                  <p key={idx} className="">
+                  <p key={idx}>
                     {text}
+                    <div className="">
+                      <a
+                        href={repo.homepage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        Open Demo <span className="text-l">→</span>
+                      </a>
+                    </div>
                   </p>
                 ))}
               </div>
